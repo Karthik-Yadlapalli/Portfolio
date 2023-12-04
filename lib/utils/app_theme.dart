@@ -9,7 +9,7 @@ class AppTheme {
       ));
 
   static Color selectedColor = Colors.white;
-  static Color unSelectedColor = Colors.grey[400]!;
+  static Color unSelectedColor = Colors.grey[500]!;
   static Gradient sideMenuColor = LinearGradient(begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: [
     Colors.black,
     Colors.grey[900]!,
