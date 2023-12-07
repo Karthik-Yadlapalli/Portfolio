@@ -11,28 +11,37 @@ class Home extends StatefulWidget {
 class _AboutState extends State<Home> {
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Material(
         color: Colors.transparent,
         child: Column(
           children: [
-            const SizedBox(
-              height: 300,
+            SizedBox(
+              height: MediaQuery.of(context).size.height * (3 / 8),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 200.0),
-              child: Container(
-                width: MediaQuery.of(context).size.width - 300 * 4.0,
-                height: 250,
-                color: Colors.white,
-                child: RichText(
-                  text: TextSpan(
-                    text: 'Hello ',
-                    style: TextStyle(fontSize: 30, color: AppTheme.selectedColor),
-                    children: const <TextSpan>[
-                      TextSpan(text: 'bold', style: TextStyle(fontWeight: FontWeight.bold)),
-                      TextSpan(text: ' world!'),
-                    ],
-                  ),
+              padding: EdgeInsets.only(left: MediaQuery.of(context).size.width * (1 / 8)),
+              child: RichText(
+                text: TextSpan(
+                  text: "Hi there!\n",
+                  style: TextStyle(
+                      fontSize: screenWidth < 1100 ? MediaQuery.of(context).size.width * (0.5 / 8) : 60,
+                      color: AppTheme.selectedColor,
+                      fontWeight: FontWeight.bold),
+                  children: <TextSpan>[
+                    TextSpan(
+                        text: "I'm ",
+                        style: TextStyle(
+                            fontSize: screenWidth < 1100 ? MediaQuery.of(context).size.width * (0.2 / 8) : 32)),
+                    TextSpan(
+                        text: "Karthik Yadlapalli\n",
+                        style: TextStyle(
+                            fontSize: screenWidth < 1100 ? MediaQuery.of(context).size.width * (0.3 / 8) : 36)),
+                    TextSpan(
+                        text: 'Mobile Application Developer',
+                        style: TextStyle(
+                            fontSize: screenWidth < 1100 ? MediaQuery.of(context).size.width * (0.2 / 8) : 32)),
+                  ],
                 ),
               ),
             ),
